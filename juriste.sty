@@ -11,10 +11,10 @@
 %%% Codes
 \def\legifranceccivill{\legifranceunarticledecode code=CCIVILL0.rcv\&}
 \def\legifrancecprointl{\legifranceunarticledecode code=CPROINTL.rcv\&}
-%% rechJuriJudi
-\def\legifrancerechjurijudi{\legifrance rechJuriJudi.do?}
-%% rechJuriAdmin
-\def\legifrancerechjuriadmin{\legifrance rechJuriAdmin.do?}
+%% rechJuriJudi FIXME:
+\def\legifrancerechjurijudi{\legifrance rechJuriJudi.do?reprise=true\&page=1\&}
+%% rechJuriAdmin FIXME:
+\def\legifrancerechjuriadmin{\legifrance rechJuriAdmin.do?reprise=true\&page=1\&}
 
 
 \RequirePackage{hyperref}
@@ -22,10 +22,11 @@
 \newcommand{\eurlex}[1]{\href{\eurlexsearch text=#1}{\nofrench@punctuation #1}} 
 \newcommand{\ecli}[1]{\href{\eurlexsearch text=ECLI:#1}{\nofrench@punctuation ECLI:#1}} 
 
+% Ne fonctionne pas, voir plus haut FIXME
 \newcommand{\ccass}[1]{\href{\legifrancerechjurijudi rech_simple.judi.champ2.title=#1}{#1}}
 \newcommand{\cetat}[1]{\href{\legifrancerechjuriadmin rech_simple.admin.champ2.title=#1}{#1}}
 
 \newcommand{\cciv}[1]{\href{\legifranceccivill art=#1}{#1}}
-\newcommand{\cprointl}[2]{\href{\legifranceprointl art=#1#2}{MakeUppercase{#1.}~#2}}
+\newcommand{\cprointl}[2]{\href{\legifrancecprointl art=#1#2}{\MakeUppercase{#1.}~#2}}
 
 \endinput
