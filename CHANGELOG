@@ -1,0 +1,8 @@
+2015-11-16  Hugo Roy <hugo+latexpkg@ampoliros.net>
+
+	* juriste.sty basic pakage providing hyperref commands to make links
+	to various legal documents, from European court cases, European
+	law documents, French Highest courts decisions and French civil
+	law code and intellectual property code.
+	* README created
+	* CHANGELOG created
