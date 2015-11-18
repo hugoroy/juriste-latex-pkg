@@ -2,7 +2,10 @@
 \ProvidesPackage{juriste}[2015/11/16 version 0.1: commands for French lawyers]
 
 % eur-lex.europa.eu
-\def\eurlexsearch{http://eur-lex.europa.eu/search.html?qid=\&type=quick\&}
+\def\eurlexsearch{http://eur-lex.europa.eu/search.html?qid=\&type=advanced\&}
+
+% curia.europa.eu
+\def\curiajuris{http://curia.europa.eu/juris/liste.jsf?}
 
 % legirance.gouv.fr 
 \def\legifrance{http://www.legifrance.gouv.fr/}
@@ -15,21 +18,25 @@
 \def\legifrancerechjurijudi{\legifrance rechJuriJudi.do?reprise=true\&page=1\&}
 %% rechJuriAdmin FIXME:
 \def\legifrancerechjuriadmin{\legifrance rechJuriAdmin.do?reprise=true\&page=1\&}
-%% recherche ariane
+
+% recherche ariane
 \def\arianesearch{http://arianeinternet.conseil-etat.fr/arianeinternet/advancedsearch.asp?}
 
+% recherche conseil constitutionnel
+\def\conseilcons{http://recherche.conseil-constitutionnel.fr/?expert=2\&}
 
 \RequirePackage{hyperref}
 
+\newcommand{\eurlex}[1]{\href{\eurlexsearch text=#1}{#1}} 
 % FIXME: remplacer \nofrench@punctuation qui semble limité à
 % polyglossia et ne fonctionne pas avec babel?
-\newcommand{\eurlex}[1]{\href{\eurlexsearch text=#1}{\nofrench@punctuation #1}} 
-\newcommand{\ecli}[1]{\href{\eurlexsearch text=ECLI:#1}{\nofrench@punctuation ECLI:#1}} 
+\newcommand{\ecli}[1]{\href{\eurlexsearch ECLI=ECLI:#1}{\nofrench@punctuation ECLI:#1}} 
 
-% Ne fonctionne pas, voir plus haut FIXME
+\newcommand{\cjue}[1]{\href{\curiajuris num=#1}{#1}}
+
 \newcommand{\ccass}[1]{\href{\legifrancerechjurijudi rech_simple.judi.champ2.title=#1}{#1}}
-
 \newcommand{\cetat}[1]{\href{\arianesearch dec_id_t=#1}{#1}}
+\newcommand{\ccons}[1]{\href{\conseilcons filtres3=#1}{#1}}
 
 \newcommand{\cciv}[1]{\href{\legifranceccivill art=#1}{#1}}
 \newcommand{\cprointl}[2]{\href{\legifrancecprointl art=#1#2}{\MakeUppercase{#1.}\thinspace #2}}

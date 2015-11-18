@@ -14,8 +14,6 @@ Quelques commandes utiles pour les juristes utilisant LaTeX.
 
 # Liens vers des articles de codes
 
-Je n’ai pas encore fait la liste de tous les codes pour aller chercher leur identifiant…
-
 #### Code civil
 
 L'article \cciv{1382} du code civil évidemment:
@@ -35,34 +33,39 @@ l’article \cprointl{l}{122-6-1} CPI, il faut entrer
 
 #### Jurisprudence européenne
 
-En attendant de trouver un résolveur global pour ECLI, on peut utiliser les identifiants ECLI sur Eur-Lex:
+En attendant de trouver un résolveur global pour ECLI, on peut
+utiliser les identifiants ECLI sur Eur-Lex pour rechercher dans la
+jurisprudence de l'Union européenne.
 
 Par exemple, \ecli{EU:C:2010:662} qui peut être obtenu grâce à
 
-    \ecli{EU:C:2010:662}
+    \ecli{EU:C:2010:662} % sans les espaces avant les :
 
-ou
+Le moteur de recherche de la Cour de justice de l'UE peut aussi être
+utilisé, par exemple pour référencer une décision de la Cour de
+justice par numéro d'affaire \cjue{C-293/12}
 
-    \eurlex{ECLI:EU:C:2010:662}
+    \cjue{C-293/12}
 
+#### Jurisprudence française
 
-#### Jurisprudence française [NE FONCTIONNE PAS]
-
-En utilisant le moteur de recherche de Légifrance, on peut référencer
-les arrêts de la Cour de cassation ou du Conseil d'État directement
-par numéro (Cela devrait fonctionner aussi pour d'autres juridictions
-mais, malheureusement, toutes les décisions de justice de autres
-juridictions ne sont pas forcément dans Légifrance...).
+On peut référencer les arrêts de la Cour de cassation ou du Conseil
+d'État directement par numéro d'affaire, ainsi que les décisions du
+Conseil constitutionnel par numéro de décision (DC ou QPC).
 
 Voir par exemple l'arrêt de la 2\textsuperscript{e} chambre civile du jeudi 4
-décembre 2014 n\textsuperscript{o} \ccass{13-25684}
+décembre 2014 n\textsuperscript{o} \ccass{13-25684} [ne fonctionnera pas]
 
     \ccass{13-25684}
 
 ou par exemple, n\textsuperscript{o} \cetat{345903} pour le Conseil d'État,
 
-    \cetat{345903}.
+    \cetat{345903}
 
+ou encore la décision n\textsuperscript{o} \ccons{2015-478} QPC pour
+le Conseil constitutionnel,
+
+    \ccons{2015-478}
 
 # TODO
 
@@ -70,3 +73,5 @@ ou par exemple, n\textsuperscript{o} \cetat{345903} pour le Conseil d'État,
 
  -   générer automatiquement une table des décisions de justice / des articles de code cités dans les écritures
 
+ -   corriger la requête à légifrance qui ne fonctionne pas pour la
+     Cour de cassation
