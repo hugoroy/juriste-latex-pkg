@@ -19,6 +19,8 @@
 
 \RequirePackage{hyperref}
 
+% FIXME: remplacer \nofrench@punctuation qui semble limité à
+% polyglossia et ne fonctionne pas avec babel?
 \newcommand{\eurlex}[1]{\href{\eurlexsearch text=#1}{\nofrench@punctuation #1}} 
 \newcommand{\ecli}[1]{\href{\eurlexsearch text=ECLI:#1}{\nofrench@punctuation ECLI:#1}} 
 

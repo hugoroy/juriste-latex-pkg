@@ -2,7 +2,7 @@
 title: "Le paquet `juriste`"
 author: "Hugo Roy"
 date: \today
-lang: true
+lang: fr-fr
 mainlang: french
 otherlang: english
 colorlinks: true
